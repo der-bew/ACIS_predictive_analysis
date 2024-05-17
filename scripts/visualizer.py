@@ -53,7 +53,7 @@ def plot_boxplot(df, var_x, var_y=None, hue_var=None):
     - hue_var: Optional variable to differentiate boxplots by hue.
     """
     # Set figure size
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(20, 6))
     # Determine the type of boxplot based on the input parameters
     if var_y is None:
         # Simple boxplot
@@ -70,4 +70,21 @@ def plot_boxplot(df, var_x, var_y=None, hue_var=None):
     plt.xlabel(var_x)
     if var_y is not None:
         plt.ylabel(var_y)
+    plt.show()
+
+def plot_line(df, x_col, y_col):
+    """
+    Plot multiple lines on the same chart.
+    
+    Parameters:
+    - df (pd.DataFrame): The DataFrame containing the data.
+    - x_col (str): The name of the column to use for the x-axis.
+    - y_col: Variable length argument of column names to plot.
+    """
+    
+    plt.figure(figsize=(20, 6))
+    sns.lineplot(x=x_col, y=y_col, data=df, markers='*')
+    plt.title(f'Comparison of {y_col} Over Time')
+    plt.xlabel(x_col)
+    plt.ylabel(y_col)
     plt.show()
