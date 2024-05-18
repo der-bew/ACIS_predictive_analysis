@@ -1,0 +1,5 @@
+[core]
+    autostage = true
+    remote = localstorage
+['remote "localstorage"']
+    url = /home/derbew/Documents/10a/ACIS_predictive_analysis/storage
